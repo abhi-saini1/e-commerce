@@ -23,8 +23,8 @@ const Navbar : React.FC<NavbarProps> = ({user}) => {
         setOpenUser(!openUser)
     }
   return (
-    <nav>
-        <div className='main-container flex items-center justify-between py-2 relative'>
+    <nav className='border-b'>
+        <div className='main-container  flex items-center justify-between py-2 relative'>
             <Link href={'/'}>
                     <Image src='/logo.png' className='w-[75px]' width={300} height={300} alt='logo' />
             </Link>
