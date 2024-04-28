@@ -24,8 +24,8 @@ const Hero = () => {
             <Image
               src="/banner1.jpg"
               className="w-full h-[550px] object-cover"
-              width={1000}
-              height={1000}
+              width={1200}
+              height={1200}
               alt="banner-1"
             />
           </SwiperSlide>
@@ -33,8 +33,8 @@ const Hero = () => {
             <Image
               src="/banner2.jpg"
               className="w-full h-[550px] object-cover"
-              width={1000}
-              height={1000}
+              width={1200}
+              height={1200}
               alt="banner-1"
             />
           </SwiperSlide>

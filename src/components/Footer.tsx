@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import React from 'react'
 import { FaFacebookSquare } from 'react-icons/fa'
-import { FaSquareInstagram, FaSquareSnapchat, FaSquareXTwitter } from 'react-icons/fa6'
+import { FaLinkedin, FaSquareInstagram, FaSquareSnapchat, FaSquareXTwitter } from 'react-icons/fa6'
 import { mainLinks } from '../Links/Link'
 import Link from 'next/link'
 
@@ -26,7 +26,7 @@ const Footer = () => {
             <FaSquareXTwitter />
             <FaFacebookSquare />
             <FaSquareInstagram />
-            <FaSquareSnapchat />
+            <FaLinkedin/>
           </div>
         </div>
 
