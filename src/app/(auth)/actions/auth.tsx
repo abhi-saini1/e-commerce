@@ -17,7 +17,24 @@ export async function createUser(formData:FormData){
             if(existingUser){
                 throw new Error('You already have a memeber')
             }
-            const hashedPassword = await bcrypt.hash
+            const hashedPassword = await bcrypt.hash(
+                password,
+                12
+            )
+            await prisma.user.create({
+                data:{
+                    email: email,
+                    name: name,
+                    hashedPassword: hashedPassword
+                }
+            })
+            revalidatePath('/')
+        }catch(existingUser){
+            return {
+                existingUser: 'You already have a memeber, please sign in'
+            };
         }
-    }
+    }catch(error){
+        console.log(error);
+}
 }

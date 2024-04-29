@@ -7,6 +7,7 @@ import { Avatar } from '@mui/material';
 import { MdClose, MdOutlineShoppingCart } from "react-icons/md"
 import { AiOutlineHeart } from "react-icons/ai";
 import { FiMenu } from 'react-icons/fi';
+import {User} from '@prisma/client'
 
 
 interface NavbarProps{
