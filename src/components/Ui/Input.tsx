@@ -26,7 +26,7 @@ const Input: React.FC<InputProps> = ({
                 id={id}
                 autoComplete={id}
                 className={clsx(
-                    `w-full rounded-md border-0 py-1.5 text-gray-800 shadow-sm ring-1 ring-inset focus:ring-gray-500 sm:text-sm sm:leading-6 block`, disabled && "opacity-50 cursor-default"
+                    `w-[300px] rounded-md border-0 py-1.5 text-gray-800 shadow-sm ring-1 ring-inset focus:ring-gray-500 sm:text-sm sm:leading-6 block`, disabled && "opacity-50 cursor-default"
                 )}
                 />
             </div>
