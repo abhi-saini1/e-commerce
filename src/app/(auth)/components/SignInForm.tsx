@@ -1,11 +1,40 @@
 'use client'
 import Button from '@/components/Ui/Button'
 import Input from '@/components/Ui/Input'
+import { signIn } from 'next-auth/react'
 import Image from 'next/image'
 import Link from 'next/link'
-import React from 'react'
+import { useRouter } from 'next/navigation'
+import React, { useRef } from 'react'
+import toast from 'react-hot-toast'
 
 const SignInForm = () => {
+    const formRef = useRef<HTMLFormElement>(null);
+    const router = useRouter()
+  
+    const handleSubmit = async (e:React.FormEvent) =>{
+      e.preventDefault();
+  
+      const formData = new FormData(formRef.current!)
+      const email = formData.get('email') as string
+      const password = formData.get('password') as string
+  
+      try{
+        const result = await signIn('credentials',{
+          redirect: false,
+          email,
+          password
+        })
+        if(result?.error){
+          throw new Error(result.error)
+        }
+        toast.success('Successfully Signed in')
+        router.refresh
+        router.push('/')
+      }catch(error:any){
+        toast.error(error.message || 'Authentication failed')
+      }
+    }
   return (
     <div className='main-container mt-8'>
         <div className='flex gap-32'>
@@ -19,7 +48,7 @@ const SignInForm = () => {
                     <h1>Join the Nike</h1>
                 </div>
 
-                <form className='mt-4 m-4'>
+                <form className='mt-4 m-4' onSubmit={handleSubmit} ref={formRef}>
                     <div className='mt-2'>
                         <Input type='email' id='email' label='Email'/>
                     </div>
@@ -57,4 +86,4 @@ const SignInForm = () => {
   )
 }
 
-export default SignInForm
+export default SignInForm;

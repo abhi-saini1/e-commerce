@@ -4,10 +4,10 @@ import Input from '@/components/Ui/Input'
 import { useSession } from 'next-auth/react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { useRouter } from 'next/navigation'
 import React, { useEffect, useRef, useState } from 'react'
 import toast from 'react-hot-toast'
 import { createUser } from '../actions/auth'
+import { useRouter } from 'next/navigation'
 
 const SignUpForm = () => {
     const [isSubmitting,setIsSubmitting] = useState(false);
@@ -17,24 +17,24 @@ const SignUpForm = () => {
     const router = useRouter()
   
     useEffect(()=>{
-      if(session.status === 'authenticated'){
-        toast.success('You are already signed in')
-        router.push('/')
+        if(session.status === 'authenticated'){
+          toast.success('You are already signed in')
+          router.push('/')
+        }
+      },[session.status, router])
+    
+      const handleSubmit = async (formData: FormData) => {
+        setIsSubmitting(true)
+        const result  = await createUser(formData)
+        if(result?.existingUser){
+          toast.error(result.existingUser)
+        }else{
+          toast.success('Welcome! Please Sign In')
+          ref.current?.reset();
+          router.push('/signin')
+        }
+        setIsSubmitting(false)
       }
-    },[session.status, router])
-  
-    const handleSubmit = async (formData: FormData) => {
-      setIsSubmitting(true)
-      const result  = await createUser(formData)
-      if(result?.existingUser){
-        toast.error(result.existingUser)
-      }else{
-        toast.success('Welcome! Please Sign In')
-        ref.current?.reset();
-        router.push('/signin')
-      }
-      setIsSubmitting(false)
-    }
   return (
     <div className='main-container mt-8'>
         <div className='flex gap-32'>
@@ -48,11 +48,11 @@ const SignUpForm = () => {
                     <h1>Join the Nike</h1>
                 </div>
 
-                <form className='mt-4 m-4' ref={ref} onSubmit={(e)=> {
-                    e.preventDefault();
-                    const formData = new FormData(e.currentTarget)
-                    handleSubmit(formData);
-                }}>
+                <form className='mt-4 m-4'  ref={ref} onSubmit={(e)=> {
+                        e.preventDefault();
+                        const formData = new FormData(e.currentTarget)
+                        handleSubmit(formData);
+                         }}>
                     <div className=''>
                             <Input disabled={isSubmitting} type='text' id='name' label='Name'/>
                     </div>

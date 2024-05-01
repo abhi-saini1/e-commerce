@@ -8,6 +8,7 @@ import { MdClose, MdOutlineShoppingCart } from "react-icons/md"
 import { AiOutlineHeart } from "react-icons/ai";
 import { FiMenu } from 'react-icons/fi';
 import {User} from '@prisma/client'
+import { signOut } from 'next-auth/react';
 
 
 interface NavbarProps{
@@ -31,7 +32,7 @@ const Navbar : React.FC<NavbarProps> = ({user}) => {
             </Link>
 
             <ul className='flex gap-10 max-md:hidden'>
-                {mainLinks?.map((link,i)=>(
+                {mainLinks.map((link,i)=>(
                     <Link href={link.route} key={i}>
                         <li>{link.label}</li>
                     </Link>
@@ -70,7 +71,7 @@ const Navbar : React.FC<NavbarProps> = ({user}) => {
                                     <li>{link.route}</li>
                                 </Link>
                             ))}
-                            <li className='cursor-pointer'>
+                            <li className='cursor-pointer' onClick={()=> signOut()}>
                                 Sign Out
                             </li>
                         </ul>
@@ -107,7 +108,7 @@ const Navbar : React.FC<NavbarProps> = ({user}) => {
                                             <li>{link.label}</li>
                                         </Link>
                                     ))}
-                                    <li  className='cursor-pointer'>
+                                    <li  className='cursor-pointer' onClick={() => signOut()}>
                                         Sign Out
                                     </li>
                                    
