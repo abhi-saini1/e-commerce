@@ -13,28 +13,27 @@ const SignUpForm = () => {
     const [isSubmitting,setIsSubmitting] = useState(false);
 
     const session = useSession();
-    const ref = useRef<HTMLFormElement>(null);
-    const router = useRouter();
-
+    const ref = useRef<HTMLFormElement>(null)
+    const router = useRouter()
+  
     useEffect(()=>{
-        if(session.status === 'authenticated'){
-            toast.success('You are already signed in')
-            router.push('/')
-        }
-    },[session.status,router])
-
-    const handleSubmit = async(formData: FormData) => {
-        setIsSubmitting(true);
-
-        const result = await createUser(formData)
-        if(result?.existingUser){
-            toast.error(result.existingUser)
-        }else{
-            toast.success('Welcome! Please Sign In')
-            ref.current?.reset();
-            router.push('/signin')
-        }
-        setIsSubmitting(false);
+      if(session.status === 'authenticated'){
+        toast.success('You are already signed in')
+        router.push('/')
+      }
+    },[session.status, router])
+  
+    const handleSubmit = async (formData: FormData) => {
+      setIsSubmitting(true)
+      const result  = await createUser(formData)
+      if(result?.existingUser){
+        toast.error(result.existingUser)
+      }else{
+        toast.success('Welcome! Please Sign In')
+        ref.current?.reset();
+        router.push('/signin')
+      }
+      setIsSubmitting(false)
     }
   return (
     <div className='main-container mt-8'>
@@ -51,7 +50,7 @@ const SignUpForm = () => {
 
                 <form className='mt-4 m-4' ref={ref} onSubmit={(e)=> {
                     e.preventDefault();
-                    const formData = new FormData(e.currentTarget);
+                    const formData = new FormData(e.currentTarget)
                     handleSubmit(formData);
                 }}>
                     <div className=''>
