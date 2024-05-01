@@ -19,11 +19,11 @@ export const mainLinks = [
 
 export const userLinks = [
     {
-        route: '/dashboard',
+        route: 'dashboard',
         label: 'Orders',
     },
     {
-        route: '/wishlist',
+        route: 'wishlist',
         label: 'wishlist',
     }
 ]

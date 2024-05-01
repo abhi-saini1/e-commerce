@@ -2,8 +2,8 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import React, { useState } from 'react'
-import { mainLinks, userLinks } from '../Links/Link';
-import { Avatar } from '@mui/material';
+import { mainLinks } from '@/Links/Link';
+import { userLinks } from '@/Links/Link';
 import { MdClose, MdOutlineShoppingCart } from "react-icons/md"
 import { AiOutlineHeart } from "react-icons/ai";
 import { FiMenu } from 'react-icons/fi';
@@ -103,7 +103,7 @@ const Navbar : React.FC<NavbarProps> = ({user}) => {
                                 </>
                             ): (
                                 <>
-                                    {userLinks?.map((link,i)=>(
+                                    {userLinks.map((link,i)=>(
                                         <Link key={i} href={link.route}>
                                             <li>{link.label}</li>
                                         </Link>
