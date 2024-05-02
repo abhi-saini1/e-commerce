@@ -3,7 +3,7 @@ import NextAuth,{AuthOptions} from 'next-auth'
 import CredentialsProvider from 'next-auth/providers/credentials'
 import { PrismaAdapter } from '@auth/prisma-adapter'
 import prisma from '@/library/prismadb';
-
+import GoogleProvider from 'next-auth/providers/google'
 
 
 export const authOptions: AuthOptions = {
@@ -41,6 +41,10 @@ export const authOptions: AuthOptions = {
   
           return user;
         }
+      }),
+      GoogleProvider({
+        clientId: process.env.GOOGLE_ID as string,
+        clientSecret: process.env.GOOGLE_SECRET as string,
       })
     ],
     
@@ -53,8 +57,10 @@ export const authOptions: AuthOptions = {
     },
     
     secret: process.env.NEXTAUTH_SECRET,
+
   };
-  
+
+
   const handler = NextAuth(authOptions);
   
   export { handler as GET, handler as POST };

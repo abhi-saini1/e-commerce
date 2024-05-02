@@ -1,7 +1,7 @@
 'use client'
 import Button from '@/components/Ui/Button'
 import Input from '@/components/Ui/Input'
-import { useSession } from 'next-auth/react'
+import { signIn, useSession } from 'next-auth/react'
 import Image from 'next/image'
 import Link from 'next/link'
 import React, { useEffect, useRef, useState } from 'react'
@@ -35,6 +35,14 @@ const SignUpForm = () => {
         }
         setIsSubmitting(false)
       }
+
+    //   google Login
+    // const googleLogin = async () => {
+    //     await signIn('google',{
+    //         callbackUrl:'/',
+    //         redirect: true
+    //     })
+    // }
   return (
     <div className='main-container mt-8'>
         <div className='flex gap-32'>
@@ -73,7 +81,7 @@ const SignUpForm = () => {
                         <span className='text-[11px]'>Or Connect With</span>
                     </div>
                     <div className='flex gap-6 items-center justify-center mt-5'>
-                        <Link href={''}>
+                        <Link href='#' onClick={()=> signIn('google')}>
                             <Image src='/google.png' className='w-[25px] h-auto' width={300} height={300} alt=''/>
                         </Link>
                         <Link href={''}>
