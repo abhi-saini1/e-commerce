@@ -1,6 +1,7 @@
 import { FetchProducts } from "@/app/actions/GetStripeProduct";
 // import Link from "next/link";
 import ProductCard from "./ProductCard";
+import Link from "next/link";
 
 
 
@@ -15,10 +16,15 @@ const NewReleaseProducts =  async()=>{
                     <h1 className="text-[32px] uppercase font-bold ">New Release</h1>
                 </div>
 
-                <div className="grid lg:grid-cols-4 gap-4 grid-cols-2">
+                <div className="grid lg:grid-cols-4 gap-4 grid-cols-2 my-5">
                     {newProducts?.map((product)=>(
                         <ProductCard key={product.id} product={product}/>
                     ))}
+                </div>
+                <div className="flex items-center justify-center my-5">
+                    <Link href={'/shop'} className="hover:underline">
+                        <span className="font-semibold text-gray-600">View More &#8594; </span>
+                    </Link>
                 </div>
             </div>
         </section>
