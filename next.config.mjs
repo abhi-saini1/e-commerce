@@ -3,6 +3,12 @@ const nextConfig = {
     images:{
         domains:[
             "lh3.googleusercontent.com"
+        ],
+        remotePatterns:[
+            {
+                protocol: 'https',
+                hostname: 'files.stripe.com'
+            }
         ]
     }
 };

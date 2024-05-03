@@ -1,5 +1,4 @@
-import Stripe from 'stripe';
-
+import Stripe from "stripe";
 
 export const FetchProducts = async () =>{
     const getProducts = async () =>{
@@ -11,10 +10,10 @@ export const FetchProducts = async () =>{
         )
         const products = await stripe.products.list({
             limit: 99,
-        })
-        const priceMap = new Map();
+        });
+        const priceMap = new Map()
         const prices = await stripe.prices.list({limit:99})
-        prices.data.forEach((price)=>{
+        prices.data.forEach((price) =>{
             if(price.product){
                 if(!priceMap.has(price.product)){
                     priceMap.set(price.product,price)
@@ -26,7 +25,7 @@ export const FetchProducts = async () =>{
                 }
             }
         });
-
+        
         const allProducts = products.data.map((product)=>{
             const price = priceMap.get(product.id)
 
@@ -35,11 +34,12 @@ export const FetchProducts = async () =>{
                 name: product.name,
                 price_id: price ? price.id : null,
                 unit_amount: price ? price.unit_amount : null,
-                image : product.images[0],
+                image: product.images[0],
                 currency: price ? price.currency : null,
                 description: product.description,
                 metadata: product.metadata,
-            }
+
+            };
         });
         return allProducts
     }

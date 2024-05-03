@@ -9,8 +9,8 @@ export const GetOrders = async (user:any) =>{
             include: {items: true}
         });
         return orders
-    }catch(err){
-        console.log('Error Fetching orders:',err);
-        throw err;
+    }catch(error){
+        console.error('Error Fetching orders:',error);
+        throw error;
     }
 }
