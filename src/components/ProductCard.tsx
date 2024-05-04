@@ -1,4 +1,5 @@
 'use client';
+import AddToCart from '@/app/(shoppingcart)/components/ui/AddToCart';
 import FormatPrice from '@/types/FormatPrice';
 import { ProductType } from '@/types/ProductTypes';
 import Image from 'next/image';
@@ -14,7 +15,7 @@ const ProductCard = ({product,}:{product:ProductType}) => {
   }
   return (
     <div className='relative flex flex-col items-center '>
-      <div className='relative group border duration-300 hover:scale-100 '>
+      <div className='relative group border duration-300 hover:scale-105 '>
         <Image src={product.image} alt={`image of ${product.name}`} className='cursor-pointer w-[250px] h-[300px]' height={300} width={300}/>
       
         <div className='absolute top-5 right-0 items-center justify-center gap-3'>
@@ -37,7 +38,15 @@ const ProductCard = ({product,}:{product:ProductType}) => {
           <option value='Uk-9'>UK-9</option>
           <option value='UK-10'>UK-10</option>
         </select>
-        <p>Add to Cart</p>
+        <AddToCart name={product.name}
+        image={product.image}
+        price={product.unit_amount}
+        id={product.price_id!}
+        sizeSelect={isSizedSelected}
+        size={selectedSize}
+        onClick={!isSizedSelected ? showToast : undefined}
+        currency='INR'
+        />
         </div>
       </div>
     </div>

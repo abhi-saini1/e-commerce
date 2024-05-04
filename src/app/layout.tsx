@@ -6,6 +6,7 @@ import Footer from "../components/Footer";
 import AuthContext from "@/Context/AuthContext";
 import getCurrentUser from "./(auth)/actions/getCurrentUser";
 import ToasterContext from "@/Context/ToasterContext";
+import CartContext from "@/Context/CartContext";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,10 +21,13 @@ export default async function RootLayout({children,}:{children:React.ReactNode})
     <html lang="en">
       <body className={inter.className}>
         <AuthContext>
+          <CartContext>
+
           <ToasterContext/>
         <Navbar user={user!}/>
         {children}
         <Footer/>
+          </CartContext>
         </AuthContext>
         </body>
     </html>
