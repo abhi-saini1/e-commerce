@@ -36,17 +36,17 @@ const Cart = () => {
           {CheckoutStore.onCheckout === 'cart' && (
             <ul>
               {items.map((item) => (
-                <li key={item.id} className='flex py-6 px-64'>
-                  <div key={item.id} className='h-36 w-36 flex items-center justify-center my-4'>
+                <li key={item.id} className='lg:flex md:flex sm:flex items-center justify-center py-6 lg:px-64 px-5'>
+                  <div key={item.id} className='flex items-center justify-center my-4'>
                     <Image src={item.image as string}
                       alt={`image of ${item.name}`}
-                    
+                      className='w-[200px] lg:w-[300px] md:w-[250px]'
                       width={300}
                       height={300}
                     />
                   </div>
 
-                  <div className='flex flex-col ml-32 items-center  justify-center'>
+                  <div className='flex flex-col  lg:ml-32 sm:ml-10 items-center  justify-center'>
                     <h3 className='font-semibold text-md  my-2'>Quanity</h3>
 
                     <div className='flex items-center justify-center gap-3'>
