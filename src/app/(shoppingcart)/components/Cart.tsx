@@ -29,7 +29,7 @@ const Cart = () => {
           </div>
         ) : null}
 
-        <div className='bg-gray-300'>
+        <div className='bg-gray-300 rounded-md'>
           <div className='text-2xl font-bold flex items-center justify-center py-4'>
             CheckOut
           </div>
@@ -40,38 +40,66 @@ const Cart = () => {
                   <div key={item.id} className='h-36 w-36 flex items-center justify-center my-4'>
                     <Image src={item.image as string}
                       alt={`image of ${item.name}`}
-                      className='w-[250px]'
-                      width={100}
-                      height={100}
+                    
+                      width={300}
+                      height={300}
                     />
                   </div>
 
-                  <div className='flex flex-col items-center justify-center'>
-                    <h3 className='font-semibold text-md px-32 my-2'>Quanity</h3>
+                  <div className='flex flex-col ml-32 items-center  justify-center'>
+                    <h3 className='font-semibold text-md  my-2'>Quanity</h3>
 
                     <div className='flex items-center justify-center gap-3'>
                       <div className='text-[22px]'>
-                        <button onClick={() => incrementItem(item.id, {
+                        <button onClick={() => decrementItem(item.id, {
                           count: 1,
                         })}>
-                          <CiCirclePlus />
+                          <CiCircleMinus />
                         </button>
                       </div>
                       <div className='w-10 h-10 bg-white flex items-center justify-center'>
                         {item.quantity}
                       </div>
                       <div className='text-[22px]'>
-                        <button onClick={() => decrementItem(item.id, {
+                        <button onClick={() => incrementItem(item.id, {
                           count: 1
                         })}>
-                          <CiCircleMinus />
+                          <CiCirclePlus />
                         </button>
                       </div>
                     </div>
 
                   </div>
+
+                  <div className='flex flex-col  items-center justify-center'>
+                    <h3 className='font-semibold text-md px-32 my-2'>Details</h3>
+                      
+                      <div className=''>
+                        {item.name}
+
+                        <div className='text-center font-semibold'>
+                          {FormatPrice(item.price)}
+                        </div>
+                      </div>
+
+                  </div>
                 </li>
               ))}
+
+              {items.length > 0 && (
+                <div className='flex items-center justify-end gap-10 p-3'>
+
+                <div className='flex gap-1'>
+                  <p className='text-[16px] font-bold'>Total:</p>
+                  <p className='tex-[18px] font-semibold'>{totalPrice !== undefined ? FormatPrice(totalPrice) : null}</p>
+                </div>
+                  <div className=''>
+                    <button onClick={(e)=> {e.preventDefault(); CheckoutStore.setCheckout('checkout')}} className='bg-[#FC8729] text-white font-semibold p-4 w-full px-3 shadow rounded-md'>
+                      Procced To Checkout
+                    </button>
+                  </div>
+                </div>
+              )} 
             </ul>
           )}
         </div>
