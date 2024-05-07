@@ -60,7 +60,6 @@ model User {
   hashedPassword String?
   createdAt      DateTime  @default(now())
   orders         Order[]
-  updatedAt      DateTime  @updatedAt
   accounts       Account[]
   sessions       Session[]
 }
@@ -72,8 +71,7 @@ model Order {
   amount          Float
   currency        String
   status          String
-  createdDate     DateTime
-  paymentIntentID String?
+  paymentIntentID String? @unique
   items           OrderItem[]
 }
 

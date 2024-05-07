@@ -8,7 +8,7 @@ type CheckoutState = {
     setPaymentIntent: (val: string) => void
     setCheckout: (val: string) => void,
 }
-export const Checkout = create<CheckoutState>()(
+export const useCheckOut = create<CheckoutState>()(
     persist(
         // initial state
         (set) => ({
@@ -17,7 +17,7 @@ export const Checkout = create<CheckoutState>()(
 
             // set state
             setPaymentIntent: (val) => set((set) => ({ paymentIntent: val })),
-            setCheckout: (val) => set((set) => ({ paymentIntent: val }))
+            setCheckout: (val) => set((set) => ({ onCheckout: val }))
         }),
         { name: 'checkout-store' }
 

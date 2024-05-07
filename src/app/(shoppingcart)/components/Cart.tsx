@@ -4,13 +4,14 @@ import FormatPrice from '@/types/FormatPrice';
 import Button from '@/components/Ui/Button';
 import { useShoppingCart } from 'use-shopping-cart';
 import Image from 'next/image';
-import { Checkout } from '@/store/Checkout';
+import { useCheckOut } from '@/store/useCheckOut';
 import { CiCirclePlus } from "react-icons/ci";
 import { CiCircleMinus } from "react-icons/ci";
+import CheckOut from './CheckOut';
 
 const Cart = () => {
-  const { cartDetails, removeItem, totalPrice, decrementItem, incrementItem } = useShoppingCart();
-  const CheckoutStore = Checkout();
+  const { cartDetails,  totalPrice, decrementItem, incrementItem } = useShoppingCart();
+  const CheckoutStore = useCheckOut();
   const items = Object.values(cartDetails ?? {})
   console.log(items);
   return (
@@ -21,7 +22,7 @@ const Cart = () => {
             &#8592; Back to cart
           </button>
         )}
-        {items.length < 1 && CheckoutStore.onCheckout === 'cart' ? (
+        {items.length < 1 && CheckoutStore.onCheckout === 'cart' ?(
           <div className='h-screen flex items-center justify-center'>
             <span className='text-2xl uppercase mb-20'>
               Your cart is empty!
@@ -94,13 +95,16 @@ const Cart = () => {
                   <p className='tex-[18px] font-semibold'>{totalPrice !== undefined ? FormatPrice(totalPrice) : null}</p>
                 </div>
                   <div className=''>
-                    <button onClick={(e)=> {e.preventDefault(); CheckoutStore.setCheckout('checkout')}} className='bg-[#FC8729] text-white font-semibold p-4 w-full px-3 shadow rounded-md'>
+                    <Button onClick={(e)=> {e.preventDefault(); CheckoutStore.setCheckout('checkout')}} >
                       Procced To Checkout
-                    </button>
+                    </Button>
                   </div>
                 </div>
               )} 
             </ul>
+          )}
+          {CheckoutStore.onCheckout === 'checkout' && (
+            <CheckOut items={items} totalPrice={totalPrice}/>
           )}
         </div>
       </div>

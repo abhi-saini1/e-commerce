@@ -1,10 +1,10 @@
 import React from 'react'
 import Cart from '../components/Cart'
 
-const page = () => {
+const cart = () => {
   return (
     <div><Cart/></div>
   )
 }
 
-export default page
+export default cart
