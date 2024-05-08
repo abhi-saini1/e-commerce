@@ -1,6 +1,6 @@
 'use server'
 
-import prisma from '@/library/prismadb';
+import prisma from '@/library/prismadb'
 import { revalidatePath } from 'next/cache'
 import bcrypt from 'bcrypt'
 

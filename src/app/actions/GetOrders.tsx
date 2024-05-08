@@ -13,4 +13,4 @@ export const GetOrders = async (user:any) =>{
         console.error('Error Fetching orders:',error);
         throw error;
     }
-}
+};

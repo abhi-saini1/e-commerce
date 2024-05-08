@@ -1,6 +1,5 @@
+import { NextResponse,NextRequest } from "next/server";
 import prisma from '@/library/prismadb';
-import { NextResponse,NextRequest } from 'next/server';
-
 export async function GET(req: NextRequest, res: NextResponse){
     try{
         const latestOrder = await prisma.order.findFirst({

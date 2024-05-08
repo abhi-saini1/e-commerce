@@ -4,14 +4,15 @@ import FormatPrice from '@/types/FormatPrice';
 import Button from '@/components/Ui/Button';
 import { useShoppingCart } from 'use-shopping-cart';
 import Image from 'next/image';
-import { useCheckOut } from '@/store/useCheckOut';
+import { UseCheckoutStore } from '@/store/UseCheckOutStore';
 import { CiCirclePlus } from "react-icons/ci";
 import { CiCircleMinus } from "react-icons/ci";
-import CheckOut from './CheckOut';
+import Checkout from './Checkout';
+
 
 const Cart = () => {
   const { cartDetails,  totalPrice, decrementItem, incrementItem } = useShoppingCart();
-  const CheckoutStore = useCheckOut();
+  const CheckoutStore = UseCheckoutStore();
   const items = Object.values(cartDetails ?? {})
   console.log(items);
   return (
@@ -31,9 +32,9 @@ const Cart = () => {
         ) : null}
 
         <div className='bg-gray-300 rounded-md'>
-          <div className='text-2xl font-bold flex items-center justify-center py-4'>
+          {/* <div className='text-2xl font-bold flex items-center justify-center py-4'>
             CheckOut
-          </div>
+          </div> */}
           {CheckoutStore.onCheckout === 'cart' && (
             <ul>
               {items.map((item) => (
@@ -104,7 +105,7 @@ const Cart = () => {
             </ul>
           )}
           {CheckoutStore.onCheckout === 'checkout' && (
-            <CheckOut items={items} totalPrice={totalPrice}/>
+            <Checkout items={items} totalPrice={totalPrice}/>
           )}
         </div>
       </div>
