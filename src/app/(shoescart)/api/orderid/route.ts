@@ -1,21 +1,22 @@
 import { NextResponse,NextRequest } from "next/server";
 import prisma from '@/library/prismadb';
-export async function GET(req: NextRequest, res: NextResponse){
+
+export async function GET(req:NextRequest, res:NextResponse){
     try{
         const latestOrder = await prisma.order.findFirst({
             orderBy:{
-                createdDate: 'desc'
+                createdDate:'desc'
             },
             select:{
                 id: true
             }
         })
         if(!latestOrder){
-            return
+            return 
         }
         return NextResponse.json({orderId: latestOrder.id})
+
     }catch(error){
-        console.log(error)
-        return 
+        console.error(error)
     }
 }

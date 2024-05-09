@@ -1,5 +1,5 @@
 'use client';
-import AddToCart from '@/app/(shoppingcart)/components/ui/AddToCart';
+import AddToCart from '@/app/(shoescart)/components/ui/AddToCart';
 import FormatPrice from '@/types/FormatPrice';
 import { ProductType } from '@/types/ProductTypes';
 import Image from 'next/image';

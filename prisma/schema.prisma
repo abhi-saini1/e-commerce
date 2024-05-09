@@ -58,10 +58,10 @@ model User {
   email          String?   @unique
   image          String?
   hashedPassword String?
-  createdAt      DateTime  @default(now())
+  createAt       DateTime  @default(now())
   orders         Order[]
   accounts       Account[]
-  sessions       Session[]
+  Session        Session[]
 }
 
 model Order {
@@ -71,8 +71,8 @@ model Order {
   amount          Float
   currency        String
   status          String
-  createdDate     DateTime @default(now())
-  paymentIntentID String? @unique
+  createdDate     DateTime    @default(now())
+  paymentIntentID String?     @unique
   items           OrderItem[]
 }
 

@@ -9,7 +9,7 @@ import { AiOutlineHeart } from "react-icons/ai";
 import { FiMenu } from 'react-icons/fi';
 import {User} from '@prisma/client'
 import { signOut } from 'next-auth/react';
-import  CartIcon  from '@/app/(shoppingcart)/components/ui/CartIcon';
+import CartIcon from '@/app/(shoescart)/components/ui/CartIcon';
 
 
 interface NavbarProps{

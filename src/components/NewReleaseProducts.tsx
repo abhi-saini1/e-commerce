@@ -6,9 +6,9 @@ import Link from "next/link";
 
 
 const NewReleaseProducts =  async()=>{
-    const product = await FetchProducts();
-    const newProducts = product.filter((product)=> product.metadata?.NewRelease === 'true')
-    console.log(newProducts);
+    const newproducts = await FetchProducts();
+    const newRelease = newproducts.filter((product)=> product.metadata?.NewRelease === 'true')
+    console.log(newRelease);
     return (
         <section className="py-10">
             <div className="main-container">
@@ -17,7 +17,7 @@ const NewReleaseProducts =  async()=>{
                 </div>
 
                 <div className="grid lg:grid-cols-4 gap-4 grid-cols-2 my-5">
-                    {newProducts?.map((product)=>(
+                    {newRelease?.map((product)=>(
                         <ProductCard key={product.id} product={product}/>
                     ))}
                 </div>

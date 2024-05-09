@@ -1,4 +1,3 @@
-
 import Link from "next/link";
 import { LuShoppingCart } from "react-icons/lu";
 import { useShoppingCart } from "use-shopping-cart";

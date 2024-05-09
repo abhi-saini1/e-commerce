@@ -45,11 +45,11 @@ export const authOptions: AuthOptions = {
     ],
     
     pages: {
-      signIn: "/sign-in",
+      signIn: '/signin'
     },
     
     session: {
-      strategy: "jwt",
+      strategy: 'jwt',
     },
     
     secret: process.env.NEXTAUTH_SECRET,
