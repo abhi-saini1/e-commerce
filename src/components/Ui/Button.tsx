@@ -18,7 +18,7 @@ const Button: React.FC<ButtonProps> = ({
 
     return (
         <button disabled={disabled} onClick={onClick} type={type} aria-disabled={pending}
-        className="bg-[#FC8729] text-white font-semibold p-4 w-full px-3 shadow rounded-md">
+        className="bg-[#FC8729] text-white font-semibold p-4 w-[150px] px-3 shadow rounded-md">
             {children}
         </button>
     )
