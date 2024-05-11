@@ -1,5 +1,6 @@
 'use client';
 import AddToCart from '@/app/(shoescart)/components/ui/AddToCart';
+import AddToWishListButton from '@/app/(wishlist)/components/AddToWishListButton';
 import FormatPrice from '@/types/FormatPrice';
 import { ProductType } from '@/types/ProductTypes';
 import Image from 'next/image';
@@ -20,7 +21,13 @@ const ProductCard = ({product,}:{product:ProductType}) => {
       
         <div className='absolute top-5 right-0 items-center justify-center gap-3'>
           <button className='mx-2  text-gray-900 p-2 rounded-md hover:text-red-500'>
-          <FiHeart/>
+          <AddToWishListButton
+          name={product.name}
+          image={product.image}
+          id={product.id}
+          unit_amount={product.unit_amount}
+          quantity={product.quantity}
+          />
           </button>
           
         </div>

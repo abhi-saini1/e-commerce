@@ -10,6 +10,7 @@ import { FiMenu } from 'react-icons/fi';
 import {User} from '@prisma/client'
 import { signOut } from 'next-auth/react';
 import CartIcon from '@/app/(shoescart)/components/ui/CartIcon';
+import WishListIcon from '@/app/(wishlist)/components/WishListIcon';
 
 
 interface NavbarProps{
@@ -42,7 +43,7 @@ const Navbar : React.FC<NavbarProps> = ({user}) => {
 
             <div className='flex gap-5 text-xl cursor-pointer items-center'>
                     <CartIcon/>
-                    <AiOutlineHeart className='w-[25px] h-[25px]'/>
+                    <WishListIcon/>
                     <div className='max-md:hidden' onClick={userMenuHandler}>
                         <div className='w-[40px] h-[40px] rounded-full border border-black bg-blue-500'>
                         </div>
