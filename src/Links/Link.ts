@@ -8,10 +8,6 @@ export const mainLinks = [
         label: 'Shop'
     },
     {
-        route: '/about',
-        label: 'About'
-    },
-    {
         route: '/contact',
         label: 'Contact'
     },

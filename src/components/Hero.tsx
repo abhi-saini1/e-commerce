@@ -10,7 +10,7 @@ import Image from "next/image";
 
 const Hero = () => {
   return (
-    <section className="mt-2">
+    <section className="py-20">
       <div className="main-container">
         <Swiper
           modules={[Autoplay, Pagination]}

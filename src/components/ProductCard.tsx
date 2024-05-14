@@ -16,7 +16,7 @@ const ProductCard = ({product,}:{product:ProductType}) => {
   }
   return (
     <div className='relative flex flex-col items-center '>
-      <div className='relative group border duration-300 hover:scale-105 '>
+      <div className='relative group border  duration-300 hover:scale-105 '>
         <Image src={product.image} alt={`image of ${product.name}`} className='cursor-pointer w-[250px] h-[300px]' height={300} width={300}/>
       
         <div className='absolute top-5 right-0 items-center justify-center gap-3'>

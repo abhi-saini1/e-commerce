@@ -39,7 +39,7 @@ const Products: React.FC<{allProducts: ProductType[];}> = ({allProducts}) => {
                 </div>
             </div>
 
-            <div className='grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1'>
+            <div className='grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-10'>
                 {sortedProducts.map((product)=>(
                     <ProductCard key={product.id} product={product}/>
                 ))}

@@ -1,12 +1,31 @@
+'use client'
 import Image from 'next/image'
-import React from 'react'
-import { FaFacebookSquare } from 'react-icons/fa'
-import { FaLinkedin, FaSquareInstagram, FaSquareSnapchat, FaSquareXTwitter } from 'react-icons/fa6'
+import React, { useEffect, useState } from 'react'
+import { FaArrowUp, FaFacebookSquare } from 'react-icons/fa'
+import { FaLinkedin, FaSquareInstagram,  FaSquareXTwitter } from 'react-icons/fa6'
 import { mainLinks } from '../Links/Link'
 import Link from 'next/link'
 
 const Footer = () => {
+  // scroll to top
+  const [isvisible,setIsVisible] = useState(false);
+  const listenScroll = () =>{
+    const heightToHidden = 200;
+    const windowScroll = document.body.scrollTop || document.documentElement.scrollTop;
+    windowScroll > heightToHidden ? setIsVisible(true) : setIsVisible(false);
+  }
+  useEffect(()=>{
+    window.addEventListener('scroll',listenScroll);
+  })
+  const ScrollToTop = ()=>{
+    window.scrollTo({
+      top:0,
+      behavior: 'smooth'
+      
+    })
+  }
   return (
+    <>
     <footer className='w-full py-5 bg-gray-900  mt-10'>
         <div className="main-container">
         <div className="py-5 mb-5 border-b border-gray-300 border-opacity-20 flex justify-between items-center max-md:flex-col max-md:gap-8">
@@ -42,6 +61,14 @@ const Footer = () => {
         </div>
       </div>
     </footer>
+
+    {/* scroll to top */}
+              {isvisible && (
+                <div className='flex items-center justify-center w-[50px] h-[50px] fixed right-0 bottom-0 z-50 cursor-pointer bg-[#FC8729] text-center border rounded-full text-white ' onClick={ScrollToTop}>
+                  <FaArrowUp className='text-1xl'/>
+                </div>
+              )}
+    </>
   )
 }
 
