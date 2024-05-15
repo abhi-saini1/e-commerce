@@ -1,10 +1,13 @@
 'use client';
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import ProductCard from './ProductCard';
 import { ProductType } from '@/types/ProductTypes';
-const Products: React.FC<{allProducts: ProductType[];}> = ({allProducts}) => {
-    const [sortBy,setSortBy] = useState('')
 
+interface Props {
+    allProducts: ProductType[];
+}
+const Products: React.FC<Props> = ({allProducts}) => {
+    const [sortBy, setSortBy] = useState('');
 
     // sorting products
     const sortProducts = () =>{
@@ -22,9 +25,17 @@ const Products: React.FC<{allProducts: ProductType[];}> = ({allProducts}) => {
     };
     const handleSortChange = (e:React.ChangeEvent<HTMLSelectElement>) =>{
         setSortBy(e.target.value);
+     
     }
+
+   
+  
     const sortedProducts = sortProducts();
+
+    
+   
   return (
+    <>
     <section className='py-20 '>
         <div className='main-container'>
             <div className='flex justify-between items-center mb-5'>
@@ -39,13 +50,19 @@ const Products: React.FC<{allProducts: ProductType[];}> = ({allProducts}) => {
                 </div>
             </div>
 
+                
             <div className='grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-10'>
                 {sortedProducts.map((product)=>(
                     <ProductCard key={product.id} product={product}/>
                 ))}
             </div>
+            
+          
+           
         </div>
     </section>
+
+    </>
   )
 }
 

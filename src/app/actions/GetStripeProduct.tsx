@@ -1,4 +1,5 @@
 import Stripe from "stripe";
+import { ProductType } from "@/types/ProductTypes";
 
 export const FetchProducts = async () =>{
     const getProducts = async () =>{
@@ -46,3 +47,5 @@ export const FetchProducts = async () =>{
     const products = await getProducts();
     return products
 }
+
+
