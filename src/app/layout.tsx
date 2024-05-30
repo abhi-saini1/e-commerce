@@ -25,8 +25,11 @@ export default async function RootLayout({children,}:{children:React.ReactNode})
 
           <ToasterContext/>
         <Navbar user={user!}/>
+      
+
         {children}
         <Footer/>
+        
           </CartContext>
         </AuthContext>
         </body>

@@ -69,7 +69,9 @@ const Navbar: React.FC<NavbarProps> = ({ user }) => {
           <CartIcon />
           <WishListIcon />
           <div className="max-md:hidden" onClick={userMenuHandler}>
-            <div className="w-[40px] h-[40px] rounded-full border border-black bg-blue-500"></div>
+            <div className="w-[40px] h-[40px] rounded-full border border-black">
+            <Image src='/noavatar.png' className="object-contain rounded-full" width={300} height={300} alt=""/>
+            </div>
           </div>
           <div className="md:hidden" onClick={mobileHandler}>
             {openMobileMenu ? <MdClose /> : <FiMenu />}
@@ -136,7 +138,9 @@ const Navbar: React.FC<NavbarProps> = ({ user }) => {
                   <Link href={"/signup"}>
                     <li>Sign Up</li>
                   </Link>
-                  <div className="w-[40px] h-[40px] rounded-full border border-black bg-blue-500"></div>
+                  <div className="w-[40px] h-[40px] rounded-full border border-black">
+                    <Image src='/noavatar.png' className="object-contain rounded-full" width={300} height={300} alt=""/>
+                  </div>
                 </>
               ) : (
                 <>

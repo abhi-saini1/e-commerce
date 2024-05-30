@@ -9,3 +9,6 @@
     @apply w-[90%] max-w-[1400px] mx-auto
    }
 }
+body{
+   scroll-behavior: smooth;
+}
