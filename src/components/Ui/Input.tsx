@@ -22,7 +22,6 @@ const Input: React.FC<InputProps> = ({
                 <input type={type}
                 disabled={disabled}
                 name={id}
-                required
                 id={id}
                 autoComplete={id}
                 className={clsx(
