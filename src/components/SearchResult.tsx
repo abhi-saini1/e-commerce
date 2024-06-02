@@ -1,44 +1,47 @@
-'use client'
-import {FetchProducts} from '@/app/actions/GetStripeProduct';
-import { ProductType } from '@/types/ProductTypes'
-import React, { useEffect, useState } from 'react'
-import Products from './Products';
+// import { useState } from 'react';
 
-const SearchResult:React.FC = () => {
-    const [products,setProducts] = useState<ProductType[]>([]);
-    const [searchQuery,setSearchQuery] = useState<string>('');
-    const [loading,setLoading] = useState<boolean>(false);
-    const [error,setError] = useState<string | null>(null)
+// interface Product {
+//   id: string;
+//   name: string;
+//   price_id: string | null;
+//   unit_amount: number | null;
+//   image: string;
+//   currency: string | null;
+//   description: string;
+//   metadata: object;
+// }
 
-    useEffect(()=>{
-        const fetchProducts = async()=>{
-            setLoading(true);
+// interface SearchProductsProps {
+//   products: Product[];
+// }
 
-            try{
-                const fetchdata: ProductType[] = await FetchProducts();
-                setProducts(fetchdata)
-            }catch(error: any){
-                setError(error.message);
-            }finally{
-                setLoading(false);
-            }
-        }
-        fetchProducts()
-    },[])
+// const SearchResult: React.FC<SearchProductsProps> = ({ products }) => {
+//   const [searchTerm, setSearchTerm] = useState('');
 
-    const filteredProducts = products.filter((product)=>{
-        product.name.toLowerCase().includes(searchQuery.toLowerCase())
-    });
-  return (
-    <div className='py-20'>
-        <input type='text' value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)}
-        placeholder='search'
-        className='mb-4 border p-3 border-gray-300 rounded'/>
-        {loading && <p>loading...</p>}
-        {error && <p>Error: {error}</p>}
-        {!loading && !error && <Products allProducts={filteredProducts}/>}
-    </div>
-  )
-}
+//   const filteredProducts = products.filter(product =>
+//     product.name.toLowerCase().includes(searchTerm.toLowerCase())
+//   );
 
-export default SearchResult
+//   return (
+//     <div>
+//       <input
+//         type="text"
+//         placeholder="Search products"
+//         value={searchTerm}
+//         onChange={(e) => setSearchTerm(e.target.value)}
+//       />
+//       <div>
+//         {filteredProducts.map(product => (
+//           <div key={product.id}>
+//             <img src={product.image} alt={product.name} />
+//             <h2>{product.name}</h2>
+//             <p>{product.description}</p>
+//             <p>{product.unit_amount ? `${product.unit_amount / 100} ${product.currency}` : 'No price available'}</p>
+//           </div>
+//         ))}
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default SearchResult;

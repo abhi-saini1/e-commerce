@@ -45,9 +45,9 @@ const SignUpForm = () => {
     // }
   return (
     <div className='main-container py-20'>
-        <div className='flex gap-32'>
+        <div className='lg:flex lg:flex-row  flex flex-col items-center justify-center lg:gap-32'>
             <div className=''>
-                <Image src='/form.jpg' className='m-5 w-full h-[550px] rounded-md' alt='' width={800} height={800}/>
+                <Image src='/form.jpg' className='m-5 h-[400px] w-[400px] lg:h-[450px] lg:w-[450px]  rounded-md' alt='' width={800} height={800}/>
             </div>
 
             
