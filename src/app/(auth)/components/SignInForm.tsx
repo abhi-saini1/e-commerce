@@ -1,7 +1,7 @@
 "use client";
 import Button from "@/components/Ui/Button";
 import Input from "@/components/Ui/Input";
-import { signIn } from "next-auth/react";
+import { signIn, useSession } from "next-auth/react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
@@ -11,6 +11,14 @@ import toast from "react-hot-toast";
 const SignInForm = () => {
   const formRef = useRef<HTMLFormElement>(null);
   const router = useRouter();
+  const {status} = useSession();
+  
+    if(status === 'loading'){
+      return <div>loading...</div>
+    }
+    if(status === 'authenticated'){
+      router.push('/')
+    }
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
@@ -66,7 +74,7 @@ const SignInForm = () => {
               <span className="text-[11px]">Or Connect With</span>
             </div>
             <div className="flex gap-6 items-center justify-center mt-5">
-              <Link href="#">
+              <Link href="#" onClick={()=> signIn('google')}>
                 <Image
                   src="/google.png"
                   className="w-[25px] h-auto"

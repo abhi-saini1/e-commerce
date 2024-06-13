@@ -5,6 +5,9 @@ import {motion} from 'framer-motion'
 const Category = () => {
   return (
     <section className='main-container py-20'>
+      <div className="flex justify-center items-center">
+        <h1 className="text-[32px] uppercase font-extrabold mb-5 ">Top Category</h1>
+      </div>
         <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 place-items-center gap-5 lg:gap-2'>
             <motion.div className='relative flex items-center justify-center cursor-pointer hover:scale-110 duration-300'
             initial={{opacity:0, scale:0.8}}

@@ -14,7 +14,9 @@ const Hero = () => {
   const words = `THE SHOE THAT WILL NOT LET YOU DOWN.`;
 
   return (
-    <section className="py-20">
+    <motion.section className="py-20" initial={{opacity:0}} animate={{opacity: 1, transition:{
+      delay: 0.5, duration: 0.4, ease: 'easeIn'
+    }}}>
       <div className="main-container">
         <div className="flex flex-col lg:flex-row my-16 lg:items-center lg:justify-between items-center justify-center">
           {/* Text */}
@@ -69,7 +71,7 @@ const Hero = () => {
           </motion.div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

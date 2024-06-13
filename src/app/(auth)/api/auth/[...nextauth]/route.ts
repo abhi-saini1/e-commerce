@@ -1,9 +1,9 @@
 import bcrypt from 'bcrypt'
 import NextAuth,{AuthOptions} from 'next-auth'
 import CredentialsProvider from 'next-auth/providers/credentials'
+import GoogleProvider from 'next-auth/providers/google'
 import { PrismaAdapter } from '@auth/prisma-adapter'
 import prisma from '@/library/prismadb'
-
 
 
 export const authOptions: AuthOptions = {
@@ -41,7 +41,8 @@ export const authOptions: AuthOptions = {
   
           return user;
         }
-      })
+      }),
+      
     ],
     
     pages: {
