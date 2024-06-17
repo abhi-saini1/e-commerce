@@ -2,7 +2,7 @@
 import React from "react";
 import FormatPrice from "@/types/FormatPrice";
 import getCurrentUser from "../(auth)/actions/getCurrentUser";
-import { getOrders } from "../actions/getOrders";
+import { getOrders } from "@/app/actions/getOrders";
 import Image from "next/image";
 import {motion} from 'framer-motion'
 const page = async () => {
