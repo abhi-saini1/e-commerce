@@ -23,3 +23,26 @@ export const userLinks = [
         label: 'wishlist',
     }
 ]
+
+export const AccountLinks =[
+    {
+        route: 'Profile',
+        label: 'Profile'
+    },
+    {
+        route: 'Join Plus',
+        label: 'Join Plus'
+    },
+    {
+        route: 'Help Center',
+        label: 'Help Center'
+    },
+    {
+        route: 'Terms',
+        label: 'Terms'
+    },
+    {
+        route: 'Privacy',
+        label: 'Privacy'
+    }
+]

@@ -46,7 +46,7 @@ const Navbar: React.FC<NavbarProps> = ({ user }) => {
         showNavbar ? "bg-white shadow-md" : ""
       }   `}
     >
-      <div className="main-container  flex items-center justify-between py-2 relative">
+      <div className="main-container  flex items-center justify-between py-2  relative">
         <Link href={"/"}>
           <Image
             src="/logo.png"

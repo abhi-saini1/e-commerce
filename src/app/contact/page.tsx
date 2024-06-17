@@ -6,6 +6,7 @@ import { CiMail } from "react-icons/ci";
 import { IoCallOutline } from "react-icons/io5";
 import toast, { Toaster } from 'react-hot-toast';
 import {motion} from 'framer-motion'
+import PageHeader from "@/components/PageHeader";
 
 const Contact : React.FC = () => {
   const [sucess,setSucess] = useState(false);
@@ -29,10 +30,12 @@ const Contact : React.FC = () => {
   }
   
    return (
+    <>
     <motion.section className="py-20" initial={{opacity:0}} animate={{opacity: 1, transition:{
       delay: 0.5, duration: 0.4, ease: 'easeIn'
     }}}>
-      <div className="main-container">
+      <PageHeader title={"Contact Page"} curpage="Contact"/>
+      <div className="main-container py-20">
         <div className="lg:flex lg:flex-row lg:items-center lg:justify-between rounded-lg w-full h-full p-5 flex flex-col items-center justify-center "
         style={{backgroundImage: `linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('/bgcontact.jpg')`,
           backgroundSize: 'cover',
@@ -108,6 +111,7 @@ const Contact : React.FC = () => {
         </div>
       </div>
     </motion.section>
+    </>
   );
 };
 
