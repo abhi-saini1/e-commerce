@@ -1,5 +1,4 @@
 'use client';
-import Image from 'next/image'
 import React, { useEffect, useState } from 'react'
 import { PaymentElement,useStripe,useElements } from '@stripe/react-stripe-js';
 import { UseCheckoutStore } from '@/store/UseCheckOutStore';

@@ -3,7 +3,6 @@ import React, { useEffect, useState } from "react";
 import { loadStripe,StripeElementsOptions } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
 import { UseCheckoutStore } from "@/store/UseCheckOutStore";
-import { useRouter } from "next/navigation";
 import CheckoutForm from "./CheckoutForm";
 import { CartEntry as ICartEntry } from "use-shopping-cart/core";
 import toast from "react-hot-toast";
