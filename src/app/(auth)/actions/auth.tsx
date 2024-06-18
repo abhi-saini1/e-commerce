@@ -1,7 +1,7 @@
 'use server'
 import prisma from '@/library/prismadb'
 import { revalidatePath } from 'next/cache'
-import bcrypt from 'bcryptjs'
+import bcrypt from 'bcrypt'
 
 export async function createUser(formData: FormData){
     try{
