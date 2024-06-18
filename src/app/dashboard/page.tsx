@@ -1,19 +1,17 @@
-'use client';
+'use server';
 import React from "react";
 import FormatPrice from "@/types/FormatPrice";
 import getCurrentUser from "../(auth)/actions/getCurrentUser";
 import { getOrders } from "@/app/actions/getOrders";
 import Image from "next/image";
-import {motion} from 'framer-motion'
+// import {motion} from 'framer-motion'
 const page = async () => {
   const user = await getCurrentUser();
   const orders = await getOrders(user);
   return (
     <>
       {user ? (
-        <motion.div className="main-container py-20" initial={{opacity:0}} animate={{opacity: 1, transition:{
-          delay: 2.4, duration: 0.4, ease: 'easeIn'
-        }}}>
+        <div className="main-container py-20 z-10" >
           <div className="">
             <h3 className="text-1xl font-semibold">Hello, {user.name}</h3>
             <p>{user?.email}</p>
@@ -59,7 +57,7 @@ const page = async () => {
               ))}
             </>
           )}
-        </motion.div>
+        </div>
       ) : (
         <>
         <div className="h-90 flex items-center justify-center text-2xl uppercase">
