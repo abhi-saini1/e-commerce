@@ -26,7 +26,7 @@
     "framer-motion": "^11.2.10",
     "glob": "^10.4.1",
     "install": "^0.13.0",
-    "kd": "^0.3.43",
+    "kd": "^1.0.1",
     "mongodb": "^6.7.0",
     "next": "14.2.4",
     "next-auth": "^4.24.7",
@@ -42,7 +42,7 @@
     "tailwind-merge": "^2.3.0",
     "use-shopping-cart": "^3.2.0",
     "uuid": "^10.0.0",
-    "vercel": "^32.7.2",
+    "vercel": "^32.3.0",
     "zustand": "^4.5.2"
   },
   "devDependencies": {
