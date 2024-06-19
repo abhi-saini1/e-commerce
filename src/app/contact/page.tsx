@@ -1,10 +1,9 @@
 'use client';
 import Button from "@/components/Ui/Button";
-import React, {  useEffect, useRef, useState } from "react";
+import React, {  useRef, useState } from "react";
 import emailjs from '@emailjs/browser'
 import { CiMail } from "react-icons/ci";
 import { IoCallOutline } from "react-icons/io5";
-import toast, { Toaster } from 'react-hot-toast';
 import {motion} from 'framer-motion'
 import PageHeader from "@/components/PageHeader";
 

@@ -25,7 +25,7 @@ const page = async () => {
           ) : (
             <>
               {orders?.map((order) => (
-                <div key={order.id} className="rounded-lg p-8 my-4 bg-gray-300">
+                <div key={order.id} className="rounded-lg p-8 my-4 bg-slate-200">
                   <h2 className="font-medium text-xs">
                     Order Number: {""}
                     {order.id.replaceAll(/\D/g, "")}
