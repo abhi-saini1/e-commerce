@@ -11,7 +11,7 @@ const Page = async () => {
     <>
       {user ? (
         <div className="main-container py-20 z-10" >
-          <div className="">
+          <div key={user.id} className="">
             <h3 className="text-1xl font-semibold">Hello, {user.name}</h3>
             <p>{user?.email}</p>
           </div>
