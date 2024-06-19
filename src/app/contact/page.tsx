@@ -29,6 +29,7 @@ const Contact : React.FC = () => {
     }
   }
   
+  
    return (
     <>
     <motion.section className="py-20" initial={{opacity:0}} animate={{opacity: 1, transition:{
