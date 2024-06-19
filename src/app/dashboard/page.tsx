@@ -12,6 +12,7 @@ const page = async () => {
       {user ? (
         <div className="main-container py-20 z-10" >
           <div className="">
+            <p className="hidden">{user?.id}</p>
             <h3 className="text-1xl font-semibold">Hello, {user.name}</h3>
             <p>{user?.email}</p>
           </div>
