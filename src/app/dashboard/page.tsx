@@ -4,7 +4,7 @@ import getCurrentUser from "../(auth)/actions/getCurrentUser";
 import { getOrders } from "@/app/actions/getOrders";
 import Image from "next/image";
 // import {motion} from 'framer-motion'
-const Dashboard = async () => {
+const Page = async () => {
   const user = await getCurrentUser();
   const orders = await getOrders(user);
   return (
@@ -12,7 +12,6 @@ const Dashboard = async () => {
       {user ? (
         <div className="main-container py-20 z-10" >
           <div className="">
-            <p className="hidden">{user?.id}</p>
             <h3 className="text-1xl font-semibold">Hello, {user.name}</h3>
             <p>{user?.email}</p>
           </div>
@@ -69,4 +68,4 @@ const Dashboard = async () => {
   );
 };
 
-export default Dashboard;
+export default Page;
