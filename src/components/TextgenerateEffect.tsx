@@ -26,7 +26,7 @@ export const TextgenerateEffect = ({
         );
       }, [scope.current]);
 
-      const renderwords = ()=>{
+      const Renderwords = ()=>{
         return (
             <motion.div ref={scope}>
                     {wordsArray.map((word,i)=>{
@@ -45,7 +45,7 @@ export const TextgenerateEffect = ({
       return (
         <div className={cn("font-bold", className)}>
         <div className="font-Playfair text-[50px] font-bold text-start">
-          {renderwords()}
+          {Renderwords()}
         </div>
     </div>
       )
