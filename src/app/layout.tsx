@@ -4,7 +4,7 @@ import "./globals.css";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import AuthContext from "@/Context/AuthContext";
-import getCurrentUser from "./(auth)/actions/getCurrentUser";
+import getCurrentUser from "./(auth)/actions/GetCurrentUser";
 import ToasterContext from "@/Context/ToasterContext";
 import CartContext from "@/Context/CartContext";
 import Scroll from "@/components/Scroll";

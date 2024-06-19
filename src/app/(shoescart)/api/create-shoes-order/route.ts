@@ -1,5 +1,5 @@
 import { NextResponse,NextRequest } from "next/server";
-import getCurrentUser from "@/app/(auth)/actions/getCurrentUser";
+import getCurrentUser from "@/app/(auth)/actions/GetCurrentUser";
 import prisma from '@/library/prismadb';
 import Stripe from 'stripe'
 // import { CartEntry } from "use-shopping-cart/core";
