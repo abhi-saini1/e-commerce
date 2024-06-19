@@ -4,7 +4,7 @@ import getCurrentUser from "../(auth)/actions/getCurrentUser";
 import { getOrders } from "@/app/actions/getOrders";
 import Image from "next/image";
 // import {motion} from 'framer-motion'
-const page = async () => {
+const Dashboard = async () => {
   const user = await getCurrentUser();
   const orders = await getOrders(user);
   return (
@@ -69,4 +69,4 @@ const page = async () => {
   );
 };
 
-export default page;
+export default Dashboard;
