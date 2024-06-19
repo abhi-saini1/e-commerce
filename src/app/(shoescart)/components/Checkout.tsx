@@ -20,7 +20,7 @@ const stripePromise = loadStripe(
     const checkoutStore = UseCheckoutStore();
     const [clientSecret, setClientSecret] = useState('');
   
-    const createOrder = async () => {
+    const CreateOrder = async () => {
       try {
         const response = await fetch('/api/create-shoes-order', {
           method: 'POST',
@@ -57,8 +57,8 @@ const stripePromise = loadStripe(
     };
   
     useEffect(() => {
-      createOrder();
-    }, [createOrder]);
+      CreateOrder();
+    }, [CreateOrder]);
   
     const options: StripeElementsOptions = {
       clientSecret,

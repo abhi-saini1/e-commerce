@@ -4,12 +4,10 @@ import Image from "next/image";
 import AddToCart from "@/app/(shoescart)/components/ui/AddToCart";
 import { UseWishListStore } from "@/store/UseWishListStore";
 import toast from "react-hot-toast";
-import AddToWishListButton from "../components/AddToWishListButton";
 import FormatPrice from "@/types/FormatPrice";
-import { FaCross } from "react-icons/fa";
 import { RxCross2 } from "react-icons/rx";
 
-const page = () => {
+const Page = () => {
   const wishlistStore = UseWishListStore();
   const [selectedSize, setSelectedSize] = useState("");
   const isSizedSelected = selectedSize !== "";
@@ -94,4 +92,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;
