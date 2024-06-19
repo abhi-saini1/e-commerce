@@ -1,7 +1,7 @@
 'use client'
 import Button from '@/components/Ui/Button'
 import Input from '@/components/Ui/Input'
-import { signIn, useSession } from 'next-auth/react'
+import { useSession } from 'next-auth/react'
 import Image from 'next/image'
 import Link from 'next/link'
 import React, { useEffect, useRef, useState } from 'react'
@@ -81,7 +81,7 @@ const SignUpForm = () => {
                         <span className='text-[11px]'>Or Connect With</span>
                     </div>
                     <div className='flex gap-6 items-center justify-center mt-5'>
-                        <Link href='#' onClick={()=> signIn('google')}>
+                        <Link href='#'>
                             <Image src='/google.png' className='w-[25px] h-auto' width={300} height={300} alt=''/>
                         </Link>
                         <Link href={''}>

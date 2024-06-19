@@ -1,4 +1,3 @@
-'use server';
 import React from "react";
 import FormatPrice from "@/types/FormatPrice";
 import getCurrentUser from "../(auth)/actions/getCurrentUser";

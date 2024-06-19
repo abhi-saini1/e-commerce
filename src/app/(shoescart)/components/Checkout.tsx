@@ -58,7 +58,7 @@ const stripePromise = loadStripe(
   
     useEffect(() => {
       createOrder();
-    }, []);
+    }, [createOrder]);
   
     const options: StripeElementsOptions = {
       clientSecret,

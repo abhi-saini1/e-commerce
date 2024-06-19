@@ -74,7 +74,7 @@ const SignInForm = () => {
               <span className="text-[11px]">Or Connect With</span>
             </div>
             <div className="flex gap-6 items-center justify-center mt-5">
-              <Link href="#" onClick={()=> signIn('google')}>
+              <Link href="#">
                 <Image
                   src="/google.png"
                   className="w-[25px] h-auto"

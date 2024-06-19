@@ -1,10 +1,6 @@
 import prisma from '@/library/prismadb';
-interface User {
-  id: string; 
-}
 
-
-export const getOrders = async (user: User) => {
+export const getOrders = async (user: any) => {
   const orders = await prisma.order.findMany({
     where: { userId: user.id },
     include: { items: true },
