@@ -6,6 +6,7 @@ import { CiMail } from "react-icons/ci";
 import { IoCallOutline } from "react-icons/io5";
 import {motion} from 'framer-motion'
 import PageHeader from "@/components/PageHeader";
+import toast from "react-hot-toast";
 
 const Contact : React.FC = () => {
   const [sucess,setSucess] = useState(false);
