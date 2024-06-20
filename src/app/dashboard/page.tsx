@@ -1,5 +1,5 @@
-import GetCurrentUser from "../(auth)/actions/GetCurrentUser";
-import { GetOrders } from "../actions/GetOrders";
+import GetCurrentUser from "@/app/(auth)/actions/GetCurrentUser";
+import { GetOrders } from "@/app/actions/GetOrders";
 import PageHeader from '@/components/PageHeader'
 import UserProfile from "@/components/UserProfile";
 import {User,Order} from '@/types/UserTypes'
