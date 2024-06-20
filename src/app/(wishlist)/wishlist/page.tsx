@@ -1,11 +1,15 @@
-"use client";
+'use client'
 import React, { useState } from "react";
 import Image from "next/image";
-import AddToCart from "@/app/(shoescart)/components/ui/AddToCart";
+import FormatPrice from "@/types/FormatPrice";
 import { UseWishListStore } from "@/store/UseWishListStore";
 import toast from "react-hot-toast";
-import FormatPrice from "@/types/FormatPrice";
 import { RxCross2 } from "react-icons/rx";
+import dynamic from "next/dynamic";
+
+const AddToCart  = dynamic(
+  () => import('@/app/(shoescart)/components/ui/AddToCart')
+)
 
 const Page = () => {
   const wishlistStore = UseWishListStore();

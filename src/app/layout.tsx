@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
-import AuthContext from "@/Context/AuthContext";
+import React, { lazy, Suspense } from 'react';
 import getCurrentUser from "./(auth)/actions/GetCurrentUser";
-import ToasterContext from "@/Context/ToasterContext";
 import CartContext from "@/Context/CartContext";
-import Scroll from "@/components/Scroll";
+const Navbar = lazy(()=> import('../components/Navbar'))
+const Footer = lazy(()=> import('../components/Footer'))
+const AuthContext = lazy(()=> import('../Context/AuthContext'))
+const ToasterContext = lazy(()=> import('../Context/ToasterContext'))
+const Scroll = lazy(()=> import('../components/Scroll'))
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -26,6 +27,7 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
+        <Suspense fallback={<div>Loading...</div>}>
         <AuthContext>
           <CartContext>
             <ToasterContext />
@@ -35,6 +37,7 @@ export default async function RootLayout({
             <Footer />
           </CartContext>
         </AuthContext>
+        </Suspense>
       </body>
     </html>
   );

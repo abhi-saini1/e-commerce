@@ -1,4 +1,3 @@
-import React from "react";
 import GetCurrentUser from "../(auth)/actions/GetCurrentUser";
 import { GetOrders } from "../actions/GetOrders";
 import PageHeader from '@/components/PageHeader'

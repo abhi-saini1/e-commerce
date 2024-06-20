@@ -1,11 +1,11 @@
-"use client";
+'use client'
 import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { mainLinks } from "@/Links/Link";
 import { userLinks } from "@/Links/Link";
-import { MdClose, MdOutlineShoppingCart } from "react-icons/md";
-import { AiOutlineHeart } from "react-icons/ai";
+import { MdClose } from "react-icons/md";
+
 import { FiMenu } from "react-icons/fi";
 import { User } from "@prisma/client";
 import { signOut } from "next-auth/react";

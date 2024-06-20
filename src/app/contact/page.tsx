@@ -1,13 +1,18 @@
 'use client';
-import Button from "@/components/Ui/Button";
 import React, {  useRef, useState } from "react";
 import emailjs from '@emailjs/browser'
 import { CiMail } from "react-icons/ci";
 import { IoCallOutline } from "react-icons/io5";
 import {motion} from 'framer-motion'
-import PageHeader from "@/components/PageHeader";
 import toast from "react-hot-toast";
+import dynamic from "next/dynamic";
 
+const Button = dynamic (
+  () => import('@/components/Ui/Button')
+)
+const PageHeader = dynamic (
+  () => import('@/components/PageHeader')
+)
 const Contact : React.FC = () => {
   const [sucess,setSucess] = useState(false);
   const [error, setError] = useState(false);
