@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import React, { lazy, Suspense } from 'react';
-import getCurrentUser from "./(auth)/actions/GetCurrentUser";
+import getCurrentUser from "@/app/(auth)/actions/GetCurrentUser";
 import CartContext from "@/Context/CartContext";
 const Navbar = lazy(()=> import('../components/Navbar'))
 const Footer = lazy(()=> import('../components/Footer'))
