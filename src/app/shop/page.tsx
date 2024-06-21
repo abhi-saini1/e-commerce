@@ -1,8 +1,8 @@
 
 import React, {Suspense} from 'react'
-import { FetchProducts } from '@/app/actions/GetStripeProduct'
-import Products from '@/components/Products';
-import PageHeader from '@/components/PageHeader';
+import { FetchProducts } from '../actions/GetStripeProduct';
+import Products from '@/src/components/Products';
+import PageHeader from '@/src/components/PageHeader';
 const page = async () => {
     const products = await FetchProducts();
   return (

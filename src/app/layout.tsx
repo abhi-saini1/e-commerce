@@ -3,7 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import React, { lazy, Suspense } from 'react';
 import GetCurrentUser from "./(auth)/actions/GetCurrentUser";
-import CartContext from "@/Context/CartContext";
+import CartContext from "../Context/CartContext";
 const Navbar = lazy(()=> import('../components/Navbar'))
 const Footer = lazy(()=> import('../components/Footer'))
 const AuthContext = lazy(()=> import('../Context/AuthContext'))

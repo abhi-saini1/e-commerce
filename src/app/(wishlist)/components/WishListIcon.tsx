@@ -1,4 +1,4 @@
-import { UseWishListStore } from "@/store/UseWishListStore";
+import { UseWishListStore } from "@/src/store/UseWishListStore";
 import Link from "next/link";
 import React from "react";
 import { AiOutlineHeart } from "react-icons/ai";

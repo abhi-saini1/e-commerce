@@ -1,6 +1,6 @@
 'use client'
-import Button from '@/components/Ui/Button'
-import Input from '@/components/Ui/Input'
+import Button from '@/src/components/Ui/Button'
+import Input from '@/src/components/Ui/Input'
 import { useSession } from 'next-auth/react'
 import Image from 'next/image'
 import Link from 'next/link'

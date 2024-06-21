@@ -1,4 +1,4 @@
-import { FetchProducts } from "@/app/actions/GetStripeProduct";
+import { FetchProducts } from "../app/actions/GetStripeProduct";
 // import Link from "next/link";
 import ProductCard from "./ProductCard";
 import Link from "next/link";

@@ -1,6 +1,6 @@
 
 import Stripe from "stripe";
-import { ProductType } from "@/types/ProductTypes";
+import { ProductType } from "@/src/types/ProductTypes";
 
 export const FetchProducts = async () =>{
     const getProducts = async () =>{

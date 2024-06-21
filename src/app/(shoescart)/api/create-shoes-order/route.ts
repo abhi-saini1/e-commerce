@@ -1,6 +1,6 @@
 import { NextResponse,NextRequest } from "next/server";
-import GetCurrentUser from "@/app/(auth)/actions/GetCurrentUser";
-import prisma from '@/library/prismadb';
+import GetCurrentUser from "@/src/app/(auth)/actions/GetCurrentUser";
+import prisma from '@/src/library/prismadb';
 import Stripe from 'stripe'
 
 

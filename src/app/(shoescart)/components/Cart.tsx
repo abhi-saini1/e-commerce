@@ -1,10 +1,10 @@
 'use client';
 import React from 'react'
-import FormatPrice from '@/types/FormatPrice';
-import Button from '@/components/Ui/Button';
+import FormatPrice from '@/src/types/FormatPrice';
+import Button from '@/src/components/Ui/Button';
 import { useShoppingCart } from 'use-shopping-cart';
 import Image from 'next/image';
-import { UseCheckoutStore } from '@/store/UseCheckOutStore';
+import { UseCheckoutStore } from '@/src/store/UseCheckOutStore';
 import { CiCirclePlus } from "react-icons/ci";
 import { CiCircleMinus } from "react-icons/ci";
 import Checkout from './Checkout';

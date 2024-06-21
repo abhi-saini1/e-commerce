@@ -1,5 +1,5 @@
 import React from 'react'
-import SignInForm from '@/app/(auth)/components/SignInForm'
+import SignInForm from '../components/SignInForm'
 const signup = () => {
   return (
     <div className='py-5'>

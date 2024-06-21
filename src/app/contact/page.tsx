@@ -8,10 +8,10 @@ import toast from "react-hot-toast";
 import dynamic from "next/dynamic";
 
 const Button = dynamic (
-  () => import('@/components/Ui/Button')
+  () => import('@/src/components/Ui/Button')
 )
 const PageHeader = dynamic (
-  () => import('@/components/PageHeader')
+  () => import('@/src/components/PageHeader')
 )
 const Contact : React.FC = () => {
   const [sucess,setSucess] = useState(false);

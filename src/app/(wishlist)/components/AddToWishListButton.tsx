@@ -1,9 +1,9 @@
 'use client';
 import React from 'react'
 import toast from 'react-hot-toast';
-import Products from '@/components/Products';
-import { ProductType } from '@/types/ProductTypes';
-import { UseWishListStore } from '@/store/UseWishListStore';
+import Products from '@/src/components/Products';
+import { ProductType } from '@/src/types/ProductTypes';
+import { UseWishListStore } from '@/src/store/UseWishListStore';
 import { FaHeartCirclePlus } from 'react-icons/fa6';
 
 

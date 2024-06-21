@@ -1,7 +1,7 @@
 'use client';
 import React, { useEffect, useState } from 'react'
 import ProductCard from './ProductCard';
-import { ProductType } from '@/types/ProductTypes';
+import { ProductType } from '../types/ProductTypes';
 import Button from './Ui/Button';
 
 interface Props {

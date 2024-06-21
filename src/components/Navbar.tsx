@@ -2,15 +2,15 @@
 import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
-import { mainLinks } from "@/Links/Link";
-import { userLinks } from "@/Links/Link";
+import { mainLinks } from "../Links/Link";
+import { userLinks } from "../Links/Link";
 import { MdClose } from "react-icons/md";
 
 import { FiMenu } from "react-icons/fi";
 import { User } from "@prisma/client";
 import { signOut } from "next-auth/react";
-import CartIcon from "@/app/(shoescart)/components/ui/CartIcon";
-import WishListIcon from "@/app/(wishlist)/components/WishListIcon";
+import CartIcon from "../app/(shoescart)/components/ui/CartIcon";
+import WishListIcon from "../app/(wishlist)/components/WishListIcon";
 import { motion } from "framer-motion";
 
 interface NavbarProps {

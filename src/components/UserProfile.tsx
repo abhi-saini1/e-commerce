@@ -1,7 +1,7 @@
 import React from 'react'
-import FormatPrice from "@/types/FormatPrice";
+import FormatPrice from '../types/FormatPrice';
 import Image from "next/image";
-import { User,Order } from '@/types/UserTypes';
+import { User,Order } from '@/src/types/UserTypes'
 
 
 interface UserProfileProps {

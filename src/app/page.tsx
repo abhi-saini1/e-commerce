@@ -1,6 +1,6 @@
 import Hero from '../components/Hero'
 import Category from '../components/Category'
-import NewReleaseProducts from '@/components/NewReleaseProducts'
+import NewReleaseProducts from '../components/NewReleaseProducts'
 const Home = () => {
   return (
     <>

@@ -1,8 +1,8 @@
 'use client'
-import AddToCart from '@/app/(shoescart)/components/ui/AddToCart';
-import AddToWishListButton from '@/app/(wishlist)/components/AddToWishListButton';
-import FormatPrice from '@/types/FormatPrice';
-import { ProductType } from '@/types/ProductTypes';
+import AddToCart from '../app/(shoescart)/components/ui/AddToCart';
+import AddToWishListButton from '../app/(wishlist)/components/AddToWishListButton';
+import FormatPrice from '../types/FormatPrice';
+import { ProductType } from '../types/ProductTypes';
 import Image from 'next/image';
 import React, { useState } from 'react'
 import toast from 'react-hot-toast';

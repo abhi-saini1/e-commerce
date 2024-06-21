@@ -1,12 +1,12 @@
 'use client';
 import React, { useEffect, useState } from 'react'
 import { PaymentElement,useStripe,useElements } from '@stripe/react-stripe-js';
-import { UseCheckoutStore } from '@/store/UseCheckOutStore';
+import { UseCheckoutStore } from '@/src/store/UseCheckOutStore';
 import { useShoppingCart } from 'use-shopping-cart';
 import { useRouter } from 'next/navigation';
 import toast from 'react-hot-toast';
-import Button from '@/components/Ui/Button';
-import FormatPrice from '@/types/FormatPrice';
+import Button from '@/src/components/Ui/Button';
+import FormatPrice from '@/src/types/FormatPrice';
 
 const CheckoutForm = ({clientSecret} : {clientSecret: string}) => {
   const elements = useElements()
