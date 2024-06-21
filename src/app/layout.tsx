@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import React, { lazy, Suspense } from 'react';
-import getCurrentUser from "@/app/(auth)/actions/GetCurrentUser";
+import GetCurrentUser from "./(auth)/actions/GetCurrentUser";
 import CartContext from "@/Context/CartContext";
 const Navbar = lazy(()=> import('../components/Navbar'))
 const Footer = lazy(()=> import('../components/Footer'))
@@ -22,7 +22,7 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const user = await getCurrentUser();
+  const user = await GetCurrentUser();
 
   return (
     <html lang="en">
