@@ -1,5 +1,5 @@
 import { NextResponse,NextRequest } from "next/server";
-import GetCurrentUser from "@/src/app/(auth)/actions/GetCurrentUser";
+import getCurrentUser from "@/src/app/(auth)/actions/getCurrentUser";
 import prisma from '@/src/library/prismadb';
 import Stripe from 'stripe'
 
@@ -86,7 +86,7 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY as string, {
   };
   
   export async function POST(req: NextRequest) {
-    const user = await GetCurrentUser();
+    const user = await getCurrentUser();
   
     if (!user) {
       return NextResponse.json({ error: 'Not signed in' }, { status: 403 });
