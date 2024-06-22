@@ -54,7 +54,7 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY as string, {
           userId,
           amount: total,
           currency: 'INR',
-          status: 'payment successfully',
+          status: 'awaiting payment',
         },
       });
     } else {
@@ -63,7 +63,7 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY as string, {
           userId,
           amount: total,
           currency: 'INR',
-          status: 'awaiting payment',
+          status: 'payment successfully',
           paymentIntentID: paymentIntent.id,
         },
       });
