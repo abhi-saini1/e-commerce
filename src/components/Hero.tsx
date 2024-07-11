@@ -26,7 +26,7 @@ const Hero = () => {
             animate={{ opacity: 1 }}
           >
             <TextgenerateEffect className="" words={words} />
-            <p className="xl:text-[16px] lg:text-[16px] text-[14px] font-normal">
+            <p className="xl:text-[16px] lg:text-[16px] text-[12px] font-normal">
               Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt
               dignissimos nostrum laboriosam pariatur ipsam.
             </p>

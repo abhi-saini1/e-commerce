@@ -16,7 +16,7 @@ const NewReleaseProducts =  async()=>{
                     <h1 className="text-[32px] uppercase font-bold ">New Release</h1>
                 </div>
 
-                <div className="grid lg:grid-cols-4 gap-10 grid-cols-2 my-5 ">
+                <div className="grid lg:grid-cols-4 gap-10 md:grid-cols-2 grid-cols-1 my-5 ">
                     {newRelease?.map((product)=>(
                         <ProductCard key={product.id} product={product}/>
                     ))}

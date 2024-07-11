@@ -37,12 +37,6 @@ export const AccountLinks =[
         route: 'Help Center',
         label: 'Help Center'
     },
-    {
-        route: 'Terms',
-        label: 'Terms'
-    },
-    {
-        route: 'Privacy',
-        label: 'Privacy'
-    }
+
+    
 ]
