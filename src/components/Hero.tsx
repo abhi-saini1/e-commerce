@@ -18,15 +18,15 @@ const Hero = () => {
       delay: 0.5, duration: 0.4, ease: 'easeIn'
     }}}>
       <div className="main-container">
-        <div className="flex flex-col lg:flex-row my-16 lg:items-center lg:justify-between items-center justify-center">
+        <div className="xl:flex xl:flex-row lg:flex md:flex py-16 flex flex-col items-center justify-center">
           {/* Text */}
           <motion.div
-            className="lg:w-[450px] w-[350px] px-4 mb-8 lg:mb-0"
+            className="xl:w-[500px] lg:w-[450px] w-[350px] px-4 mb-8 lg:mb-0 xl:flex xl:items-start xl:flex-col lg:items-start flex flex-col items-center justify-center  "
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
           >
             <TextgenerateEffect className="" words={words} />
-            <p className="text-start font-normal">
+            <p className="xl:text-[16px] lg:text-[16px] text-[14px] font-normal">
               Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt
               dignissimos nostrum laboriosam pariatur ipsam.
             </p>
@@ -44,7 +44,7 @@ const Hero = () => {
             className="w-full lg:w-auto"
           >
             <motion.div
-              className="lg:w-[750px] w-[500px]"
+              className="xl:w-[700px] lg:w-[550px]"
               style={{ x, y, rotateY, rotateX, z: 100 }}
               drag
               dragElastic={0.18}
@@ -61,7 +61,7 @@ const Hero = () => {
             >
               <Image
                 src="/ban3.png"
-                className=" h-auto w-full  lg:h-[450px] lg:w-[900px] "
+                className="xl:w-[700px] xl:h-[500px] lg:w-[700px] lg:h-[500px] w-[500px] h-[300px]"
                 width={800}
                 height={800}
                 alt=""
