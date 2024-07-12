@@ -9,7 +9,7 @@ const PageHeader:React.FC<PageHeaderProps> = ({title,curpage}) => {
   return (
     <div className='h-[400px] py-40 w-full' style={{backgroundImage: `linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(/bg-header.jpg)`, backgroundSize: 'cover', backgroundPosition: 'center'}}>
         <div className='max-w-7xl mx-auto flex flex-col items-center justify-center'>
-            <h2 className='text-7xl text-white font-bold mb-2'>{title}</h2>
+            <h2 className='xl:text-7xl lg:text-7xl md:text-5xl sm:text-5xl text-4xl text-white font-bold mb-2'>{title}</h2>
             <nav>
                 <ol className='flex space-x-2 text-sm font-semibold text-white'>
                     <li className=''>
